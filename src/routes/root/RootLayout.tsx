@@ -7,7 +7,7 @@ export default function RootLayout() {
   return (
     <div className="min-h-dvh flex flex-col bg-gray-50 text-gray-800">
       {/* Sticky, subtle blur, thin top brand bar */}
-      <header className="sticky top-0 z-10 bg-white/85 backdrop-blur border-b">
+      <header className="sticky top-0 z-10 bg-white/85 backdrop-blur border-b border-gray-300">
         <div className="h-0.5 w-full bg-brand" />
         <div className="mx-auto max-w-5xl px-4 py-3 flex items-center justify-between">
           {/* Brand mark + title */}

@@ -1,5 +1,5 @@
 # Make sure node/npm/yarn are visible when SourceTree runs hooks
-export PATH="$PWD/node_modules/.bin:$PATH"
+export PATH="$PWD/node_modules/.bin:/opt/homebrew/bin:/usr/local/bin:$PATH"
 
 echo "🔍 Running lint-staged..."
 lint-staged

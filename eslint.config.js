@@ -35,17 +35,7 @@ export default defineConfig([
 
     rules: {
       // Let Prettier handle style and enforce it as an ESLint error
-      "prettier/prettier": [
-        "error",
-        {
-          singleQuote: false,
-          semi: true,
-          trailingComma: "es5",
-          printWidth: 100,
-          arrowParens: "always",
-          endOfLine: "lf",
-        },
-      ],
+      "prettier/prettier": "error",
 
       // React rules
       "react/react-in-jsx-scope": "off",

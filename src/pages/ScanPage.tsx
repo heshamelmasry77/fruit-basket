@@ -18,6 +18,7 @@ export default function ScanPage() {
             key={code}
             onClick={() => dispatch(add(code))}
             className="rounded-md border px-3 py-1.5 text-sm hover:bg-gray-50"
+            aria-label={`Add ${code} to basket`}
           >
             + {code}
           </button>
@@ -40,6 +41,7 @@ export default function ScanPage() {
               <button
                 onClick={() => dispatch(remove(code))}
                 className="rounded border px-2 py-1 text-sm hover:bg-gray-50"
+                aria-label={`Remove one ${code} from basket`}
               >
                 −
               </button>
@@ -47,6 +49,7 @@ export default function ScanPage() {
               <button
                 onClick={() => dispatch(add(code))}
                 className="rounded border px-2 py-1 text-sm hover:bg-gray-50"
+                aria-label={`Add one ${code} to basket`}
               >
                 +
               </button>

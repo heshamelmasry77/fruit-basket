@@ -21,7 +21,7 @@ const basket = createSlice({
       state.counts[action.payload] = Math.max(0, state.counts[action.payload] - 1);
     },
     clear(state) {
-      state.counts = { apple: 0, banana: 0, peach: 0, kiwi: 0 };
+      state.counts = { ...initialState.counts };
     },
   },
 });

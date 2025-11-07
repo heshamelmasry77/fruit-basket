@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+/* Define brand tokens in v4 using @theme */
+@theme {
+  --color-brand: #5bbf4d;
+  --color-brand-light: #7ed957;
+  --color-brand-dark: #3c9a35;
+  --color-accent: #ffd166;
+}

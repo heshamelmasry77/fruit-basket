@@ -25,6 +25,7 @@ export default function ScanPage() {
         <button
           onClick={() => dispatch(clear())}
           className="rounded-md border px-3 py-1.5 text-sm hover:bg-gray-50"
+          aria-label="Clear all items from basket"
         >
           Clear
         </button>

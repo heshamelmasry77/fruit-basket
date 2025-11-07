@@ -6,11 +6,9 @@ export default function RootLayout() {
 
   return (
     <div className="min-h-dvh flex flex-col bg-gray-50 text-gray-800">
-      {/* Sticky, subtle blur, thin top brand bar */}
       <header className="sticky top-0 z-10 bg-white/85 backdrop-blur border-b border-gray-300">
         <div className="h-0.5 w-full bg-brand" />
         <div className="mx-auto max-w-5xl px-4 py-3 flex items-center justify-between">
-          {/* Brand mark + title */}
           <Link to="/" className="flex items-center gap-2">
             <span className="inline-flex h-7 w-7 items-center justify-center rounded-md bg-brand text-white text-sm font-bold">
               FB
@@ -18,16 +16,13 @@ export default function RootLayout() {
             <span className="text-lg font-semibold">Fruit Basket</span>
           </Link>
 
-          {/* Simple pill nav with clear active state */}
           <nav className="flex gap-2">
             <NavLink
               to="/"
               className={({ isActive }) =>
-                `${linkBase} ${
-                  isActive
-                    ? "bg-brand text-white shadow-sm"
-                    : "text-gray-700 hover:bg-gray-100 hover:text-brand-dark"
-                }`
+                isActive
+                  ? `${linkBase} bg-brand text-white shadow-sm`
+                  : `${linkBase} text-gray-700 hover:bg-gray-100 hover:text-brand`
               }
             >
               Home
@@ -36,14 +31,23 @@ export default function RootLayout() {
             <NavLink
               to="/scan"
               className={({ isActive }) =>
-                `${linkBase} ${
-                  isActive
-                    ? "bg-brand text-white shadow-sm"
-                    : "text-gray-700 hover:bg-gray-100 hover:text-brand-dark"
-                }`
+                isActive
+                  ? `${linkBase} bg-brand text-white shadow-sm`
+                  : `${linkBase} text-gray-700 hover:bg-gray-100 hover:text-brand`
               }
             >
               Scan
+            </NavLink>
+
+            <NavLink
+              to="/catalog"
+              className={({ isActive }) =>
+                isActive
+                  ? `${linkBase} bg-brand text-white shadow-sm`
+                  : `${linkBase} text-gray-700 hover:bg-gray-100 hover:text-brand`
+              }
+            >
+              Catalog
             </NavLink>
           </nav>
         </div>

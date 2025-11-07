@@ -3,6 +3,7 @@ import RootLayout from "@/routes/root/RootLayout";
 import HomePage from "@/pages/HomePage";
 import NotFound from "@/pages/NotFound";
 import ScanPage from "@/pages/ScanPage";
+import CatalogPage from "@/pages/CatalogPage";
 
 export const router = createBrowserRouter([
   {
@@ -12,6 +13,7 @@ export const router = createBrowserRouter([
       { index: true, element: <HomePage /> },
       { path: "scan", element: <ScanPage /> },
       { path: "*", element: <NotFound /> },
+      { path: "catalog", element: <CatalogPage /> },
     ],
   },
 ]);

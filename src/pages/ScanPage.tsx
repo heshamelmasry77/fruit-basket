@@ -1,5 +1,6 @@
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { add, remove, clear, type ItemCode } from "@/store/slices/basketSlice";
+import { calculateItemSubtotal } from "@/lib/pricing/engine";
 import { CATALOG } from "@/lib/pricing/fixtures";
 import { calculateTotal } from "@/lib/pricing/engine";
 
@@ -107,6 +108,29 @@ export default function ScanPage() {
           {total}
         </strong>
       </div>
+      {/* Summary section */}
+      {items.some((code) => counts[code] > 0) && (
+        <div className="mt-6 border-t pt-4">
+          <h3 className="text-sm font-medium mb-2">Summary</h3>
+          <ul className="text-sm space-y-1">
+            {items.map((code) => {
+              const qty = counts[code];
+              if (qty <= 0) {
+                return null;
+              }
+              const subtotal = calculateItemSubtotal(code, qty, CATALOG);
+              return (
+                <li key={code} className="flex justify-between">
+                  <span>
+                    {code} × {qty}
+                  </span>
+                  <span>{subtotal}</span>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      )}
     </section>
   );
 }

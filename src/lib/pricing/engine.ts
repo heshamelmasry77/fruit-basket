@@ -36,3 +36,29 @@ export function calculateTotal(counts: Record<ItemCode, number>, catalog: ItemPr
 
   return total;
 }
+
+/**
+ * Simple helper that returns the subtotal for a single item.
+ */
+export function calculateItemSubtotal(
+  code: ItemCode,
+  count: number,
+  catalog: ItemPricing[]
+): number {
+  if (count <= 0) {
+    return 0;
+  }
+
+  const item = catalog.find((i) => i.code === code);
+  if (!item) {
+    return 0;
+  }
+
+  if (item.offer && item.offer.kind === "multiBuy") {
+    const bundles = Math.floor(count / item.offer.qty);
+    const remainder = count % item.offer.qty;
+    return bundles * item.offer.bundlePrice + remainder * item.unitPrice;
+  }
+
+  return count * item.unitPrice;
+}

@@ -75,6 +75,7 @@ export default function ScanPage() {
 
               <div className="flex items-center gap-2">
                 <button
+                  data-testid={`remove-${code}`}
                   onClick={() => handleRemove(code)}
                   className="cursor-pointer rounded border text-sm hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus-visible:ring-2 focus-visible:ring-brand/50 h-11 w-11"
                   aria-label={`Remove one ${code}`}
@@ -84,6 +85,7 @@ export default function ScanPage() {
                 </button>
 
                 <span
+                  data-testid={`count-${code}`}
                   className="w-10 text-center tabular-nums"
                   aria-live="polite"
                   aria-label={`${code} quantity`}
@@ -92,6 +94,7 @@ export default function ScanPage() {
                 </span>
 
                 <button
+                  data-testid={`add-${code}`}
                   onClick={() => handleAdd(code)}
                   className="cursor-pointer rounded border text-sm hover:bg-gray-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand/50 h-11 w-11"
                   aria-label={`Add one ${code}`}
@@ -108,6 +111,7 @@ export default function ScanPage() {
       <div className="flex items-center justify-between border-t pt-4">
         <span className="text-sm text-gray-700">Total</span>
         <strong
+          data-testid="total"
           className="text-lg tabular-nums"
           aria-live="polite"
           aria-label={`Total price ${total}`}
@@ -143,6 +147,7 @@ export default function ScanPage() {
 
                     {hasDiscount && (
                       <span
+                        data-testid={`saved-${code}`}
                         className="rounded-full bg-brand/10 text-brand px-2 py-0.5 text-xs"
                         aria-label={`Discount applied, saved ${saved}`}
                       >
